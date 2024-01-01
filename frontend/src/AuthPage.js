@@ -4,7 +4,7 @@ const AuthPage = ({ onAuth }) => {
     const onSubmit = (e) => {
       e.preventDefault();
       const { value } = e.target[0];
-      axios.post('http://localhost:8080/authenticate',
+      axios.post(`${process.env.REACT_APP_BASEURL}/authenticate`,
       {username: value})
       .then(r => onAuth({...r.data, secret:value}))
       .catch(e => console.log('error', e))
