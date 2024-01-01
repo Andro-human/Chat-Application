@@ -30,6 +30,8 @@ app.post("/authenticate", async (req, res) => {
   }
 });
 
-app.listen(8080, () => {
-  console.log(`Node Server Running in Port http://localhost:8080`);
+const PORT = process.env.PORT||8080
+
+app.listen(PORT, () => {
+  console.log(`Node Server Running in Port http://localhost:${PORT}`);
 });
